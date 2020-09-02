@@ -1,13 +1,28 @@
-let arr = [8,5,6,8,4,3,1,3,6,4,9];
+function crearArregloAleatorio(minimo, maximo, longitud) {
+    let resultado = [];
+    for (let index = 0; index < longitud; index++) {
+        let valor = Math.floor(Math.random() * (maximo - minimo + 1) + minimo);
+        resultado.push(valor);
+    }
+    return resultado;
+}
 
 // Bubble sort
-// algoritmo de ordenamiento
+function ordenamientoBurbuja(arr) {
+    let temp;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length; j++) {
+            if (arr[j] < arr[j - 1]) {
+                temp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = temp;
+            }
+        }
+    }
+}
 
-const bubbleSort = () => {
+let array = crearArregloAleatorio(15, 30, 10);
 
-};
-
-// Insertion sort
-// Selection sort
-
-console.log(arr);
+console.log(array)
+ordenamientoBurbuja(array);
+console.log(array);
